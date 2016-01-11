@@ -2,15 +2,17 @@ angularjs-bootstrap-gulp-browserify-boilerplate
 =====================================
 [![Build Status](https://travis-ci.org/jakemmarsh/angularjs-gulp-browserify-boilerplate.svg)](https://travis-ci.org/jakemmarsh/angularjs-gulp-browserify-boilerplate) [![devDependency Status](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/jakemmarsh/angularjs-gulp-browserify-boilerplate#info=devDependencies)
 
-A boilerplate using AngularJS, SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
+A boilerplate using AngularJS, Bootstrap SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
 
-[View contributors](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate/graphs/contributors)
+This is a fork of [angularjs-gulp-browserify-boilerplate](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate)
+
+[View contributors](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate/graphs/contributors) of the original project
 
 ---
 
 ### Getting up and running
 
-1. Clone this repo from `https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate.git`
+1. Clone this repo from `https://github.com/ChristopherUrquidi/angularjs-bootstrap-gulp-browserify-boilerplate.git`
 2. Run `npm install` from the root directory
 3. Run `gulp dev` (may require installing Gulp globally `npm install gulp -g`)
 4. Your browser will automatically be opened and directed to the browser-sync proxy address
