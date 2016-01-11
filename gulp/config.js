@@ -61,6 +61,11 @@ export default {
     prodSourcemap: false
   },
 
+  twbsjs: {
+    src : 'node_modules/bootstrap-sass/assets/javascripts/bootstrap/*.js',
+    dest: 'app/js/node_modules/app_custom/vendor/bootstrap/'
+  },
+
   test: {
     karma: 'test/karma.conf.js',
     protractor: 'test/protractor.conf.js'
