@@ -33,3 +33,6 @@ angular.module('app').run(onRun);
 angular.bootstrap(document, ['app'], {
   strictDi: true
 });
+
+// Bootstrap 3
+require('app_custom');
