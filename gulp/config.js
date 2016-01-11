@@ -12,7 +12,7 @@ export default {
     src: 'app/styles/**/*.scss',
     dest: 'build/css',
     prodSourcemap: false,
-    sassIncludePaths: []
+    sassIncludePaths: ['node_modules/bootstrap-sass/assets/stylesheets']
   },
 
   scripts: {
