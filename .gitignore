@@ -19,7 +19,8 @@ coverage
 build/Release
 
 # Dependency directories
-node_modules
+node_modules/*
+!node_modules/app_custom
 bower_components
 
 # Build files
