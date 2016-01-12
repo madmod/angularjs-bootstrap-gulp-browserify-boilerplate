@@ -8,7 +8,7 @@
   "description": "Boilerplate using AngularJS, Bootstrap SASS, Gulp, and Browserify while also utilizing best practices.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChristopherUrquidi/angularjs-bootstrap-gulp-browserify-boilerplate.git"
+    "url": "https://github.com/ChristopherUrquidi/angularjs-bootstrap-gulp-browserify-boilerplate"
   },
   "keywords": [
     "express",
