@@ -8,11 +8,19 @@ export default {
   sourceDir: './app/',
   buildDir: './build/',
 
+  // AWS S3 bucket for production deployment.
+  deployBucket: 'production-portalsync-titleio.net',
+
   styles: {
     src: 'app/styles/**/*.scss',
     dest: 'build/css',
     prodSourcemap: false,
     sassIncludePaths: ['node_modules/bootstrap-sass/assets/stylesheets']
+  },
+
+  eslint: {
+    // Don't allow production deployment with lint errors.
+    enforceProd: true
   },
 
   scripts: {

@@ -20,12 +20,14 @@ build/Release
 
 # Dependency directories
 node_modules/*
-!node_modules/app_custom
 bower_components
 
 # Build files
 build
-templates.js
 
 #webstorm
 .idea
+
+# AWS publish cache
+/.awspublish-*
+

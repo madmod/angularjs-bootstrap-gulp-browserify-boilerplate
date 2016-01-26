@@ -23,7 +23,7 @@ function createSourcemap() {
 
 // Based on: http://blog.avisi.nl/2014/04/25/how-to-keep-a-fast-build-with-browserify-and-reactjs/
 function buildScript(file) {
-  
+
   let bundler = browserify({
     entries: [config.sourceDir + 'js/' + file],
     debug: createSourcemap(),
@@ -44,7 +44,6 @@ function buildScript(file) {
   const transforms = [
     { 'name':babelify, 'options': {}},
     { 'name':debowerify, 'options': {}},
-    { 'name':ngAnnotate, 'options': {}},
     { 'name':'brfs', 'options': {}},
     { 'name':'bulkify', 'options': {}}
   ];
