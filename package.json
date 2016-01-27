@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "Jake Marsh <jakemmarsh@gmail.com>",
   "contributors": [
-    "Christopher Urquidi <github@webdevlosangeles.com>"
+    "Christopher Urquidi <github@webdevlosangeles.com>",
     "John Wells <madmodmail@gmail.com>"
   ],
   "description": "Boilerplate using AngularJS, Bootstrap SASS, Gulp, and Browserify while also utilizing best practices.",
@@ -50,11 +50,13 @@
     "gulp-autoprefixer": "^3.1.0",
     "gulp-awspublish": "^3.0.1",
     "gulp-changed": "^1.0.0",
+    "gulp-data": "^1.2.1",
     "gulp-eslint": "^1.1.1",
     "gulp-gzip": "^1.2.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-notify": "^2.0.0",
+    "gulp-nunjucks-render": "^1.1.0",
     "gulp-protractor": "^2.1.0",
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^2.0.4",
@@ -73,6 +75,7 @@
     "karma-sauce-launcher": "^0.3.0",
     "merge-stream": "^1.0.0",
     "minimist": "^1.2.0",
+    "nunjucks": "^2.3.0",
     "pretty-hrtime": "^1.0.1",
     "protractor": "^3.0.0",
     "run-sequence": "^1.1.5",
