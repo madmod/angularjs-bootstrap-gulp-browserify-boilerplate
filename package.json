@@ -4,11 +4,12 @@
   "author": "Jake Marsh <jakemmarsh@gmail.com>",
   "contributors": [
     "Christopher Urquidi <github@webdevlosangeles.com>"
+    "John Wells <madmodmail@gmail.com>"
   ],
   "description": "Boilerplate using AngularJS, Bootstrap SASS, Gulp, and Browserify while also utilizing best practices.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChristopherUrquidi/angularjs-bootstrap-gulp-browserify-boilerplate"
+    "url": "https://github.com/madmod/angularjs-bootstrap-gulp-browserify-boilerplate"
   },
   "keywords": [
     "express",
@@ -53,7 +54,6 @@
     "gulp-gzip": "^1.2.0",
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^2.4.0",
-    "gulp-jshint": "^1.8.3",
     "gulp-notify": "^2.0.0",
     "gulp-protractor": "^2.1.0",
     "gulp-rename": "^1.2.0",
@@ -65,8 +65,6 @@
     "imagemin-pngcrush": "^4.1.0",
     "isparta": "^4.0.0",
     "jquery": "^1.12.0",
-    "jshint-stylish": "^2.1.0",
-    "karma": "^0.13.19",
     "karma-browserify": "^4.4.0",
     "karma-chrome-launcher": "^0.2.1",
     "karma-coverage": "douglasduteil/karma-coverage#next",
