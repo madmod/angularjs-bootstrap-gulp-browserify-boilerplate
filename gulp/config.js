@@ -63,8 +63,16 @@ export default {
     'woff2?'
   ],
 
+  favicon: {
+    src: 'app/assets/favicon/**/*',
+    dest: 'build/assets/favicon/',
+    rootSrc: ['app/assets/favicon/favicon.ico', 'app/assets/favicon/manifest.json'],
+    rootDest: 'build/'
+  },
+
   views: {
-    templatePaths: ['app/views/**/*.html'],
+    // Include the templates directory for HTML partials that wont be copied to the build output.
+    templatePaths: ['app/templates/**/*.html', 'app/views/**/*.html'],
     src: 'app/views/**/*.html',
     dest: 'build/'
   },
