@@ -30,7 +30,7 @@ export default {
     sassIncludePaths: ['node_modules/bootstrap-sass/assets/stylesheets']
   },
 
-  eslint: {
+  lint: {
     failAfterError: false
   },
 
@@ -64,9 +64,9 @@ export default {
   ],
 
   views: {
-    index: 'app/index.html',
+    templatePaths: ['app/views/**/*.html'],
     src: 'app/views/**/*.html',
-    dest: 'app/js'
+    dest: 'build/'
   },
 
   gzip: {
@@ -120,7 +120,7 @@ export default {
           }
         },
 
-        eslint: {
+        lint: {
           // Don't allow production deployment with lint errors.
           failAfterError: true
         }

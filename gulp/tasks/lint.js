@@ -20,6 +20,6 @@ gulp.task('lint', () => {
     .pipe(eslint.format(formatter))
     // To have the process exit with an error code (1) on
     // lint error, return the stream and pipe to failAfterError last.
-    // Optionally fail on production deployment if lint has errors.
-    .pipe(gulpif(config.eslint.failAfterError, eslint.failAfterError()));
+    // Optionally fail if lint has errors.
+    .pipe(gulpif(config.lint.failAfterError, eslint.failAfterError()));
 });
