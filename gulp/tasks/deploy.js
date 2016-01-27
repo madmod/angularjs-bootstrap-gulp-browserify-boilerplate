@@ -11,7 +11,7 @@ gulp.task('deploy', ['prod'], function() {
   // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
   var publisher = awspublish.create({
     params: {
-      Bucket: config.deployBucket
+      Bucket: config.deploy.bucket
     }
   });
 

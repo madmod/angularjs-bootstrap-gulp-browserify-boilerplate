@@ -5,7 +5,8 @@ module.exports = {
   // Parse Babel ES6 properly.
   parser: 'babel-eslint',
   globals: {
-    require: true
+    require: true,
+    process: true
   },
   rules: {
     strict: 0,

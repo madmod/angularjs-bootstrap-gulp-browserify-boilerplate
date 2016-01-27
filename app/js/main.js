@@ -1,2 +1,5 @@
-// Bootstrap 3
-require('app_custom');
+'use strict';
+
+console.log('hello kore')
+
+

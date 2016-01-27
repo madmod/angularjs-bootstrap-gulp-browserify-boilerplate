@@ -1,5 +1,9 @@
 'use strict';
 
+import gutil       from 'gulp-util';
+import extend      from 'extend';
+import parseArgs   from 'minimist';
+
 export default {
 
   browserPort: 3000,
@@ -8,8 +12,16 @@ export default {
   sourceDir: './app/',
   buildDir: './build/',
 
-  // AWS S3 bucket for production deployment.
-  deployBucket: 'production-portalsync-titleio.net',
+  project: 'portalsync',
+
+  deploy: {
+    // Added by env configs.
+    //bucket: '',
+    headers: {
+      // Disable caching except for production.
+      'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate'
+    }
+  },
 
   styles: {
     src: 'app/styles/**/*.scss',
@@ -19,8 +31,7 @@ export default {
   },
 
   eslint: {
-    // Don't allow production deployment with lint errors.
-    enforceProd: true
+    failAfterError: false
   },
 
   scripts: {
@@ -59,7 +70,7 @@ export default {
   },
 
   gzip: {
-    src: 'build/**/*.{html,xml,json,css,js,js.map,css.map}',
+    src: '', //'build/**/*.{html,xml,json,css,js,js.map,css.map}',
     dest: 'build/',
     options: {}
   },
@@ -79,13 +90,80 @@ export default {
     protractor: 'test/protractor.conf.js'
   },
 
-  init: function() {
+  // Env specific overrides of these default configurations.
+  envOverrides: {
+    defaultEnv: 'development',
+    // If a key matching the --env argument value is found it is merged with the config.
+    environments: {
+      // If you have a custom deployment stage add it's S3 bucket name here.
+      development: {
+        deploy: {
+          // AWS S3 bucket for development deployment.
+          bucket: 'development-portalsync-titleio.net'
+        }
+      },
+
+      beta: {
+        deploy: {
+          // AWS S3 bucket for beta deployment.
+          bucket: 'beta-portalsync-titleio.net'
+        }
+      },
+
+      production: {
+        deploy: {
+          // AWS S3 bucket for production deployment.
+          bucket: 'production-portalsync-titleio.net',
+          headers: {
+            // TODO: Enable caching for production assets.
+            //'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate'
+          }
+        },
+
+        eslint: {
+          // Don't allow production deployment with lint errors.
+          failAfterError: true
+        }
+      }
+    }
+  },
+
+  init () {
+    this.applyEnvOverrides();
+
     this.views.watch = [
       this.views.index,
       this.views.src
     ];
 
     return this;
+  },
+
+  // Apply environment specific config overrides.
+  applyEnvOverrides () {
+    let args = parseArgs(process.argv.slice(2));
+
+    let env = (args.e || args.env || args.environment || this.envOverrides.defaultEnv).toLowerCase();
+
+    gutil.log('Environment:', env);
+
+    let envConfig = this.envOverrides.environments[env];
+
+    // Add command line arguments to the config.
+    let envArgs = {
+      env: env,
+      debug: !!args.debug
+    };
+
+    // Deep extend the base config with the env config and command line arguments.
+    // This wont replace options in the default config unless they are defined or null in the env config.
+    extend(true, this, envConfig, envArgs);
+
+    if (this.debug) {
+      gutil.log('Environment specific config', JSON.stringify(envConfig, null, 2));
+    }
   }
 
 }.init();
+
+

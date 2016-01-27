@@ -1,8 +1,8 @@
 angularjs-bootstrap-gulp-browserify-boilerplate
 =====================================
-[![devDependency Status](https://david-dm.org/christopherurquidi/angularjs-bootstrap-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/christopherurquidi/angularjs-bootstrap-gulp-browserify-boilerplate#info=devDependencies)
+[![devDependency Status](https://david-dm.org/madmod/angularjs-bootstrap-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/madmod/angularjs-bootstrap-gulp-browserify-boilerplate#info=devDependencies)
 
-A boilerplate using AngularJS, Bootstrap SASS, Gulp, and Browserify that also utilizes [these best AngularJS practices](https://github.com/toddmotto/angularjs-styleguide)  and Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
+A boilerplate using ~~AngularJS,~~ Bootstrap SASS, Gulp, and Browserify that utilizes Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
 
 This is a fork of [angularjs-gulp-browserify-boilerplate](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate)
 
@@ -12,7 +12,7 @@ This is a fork of [angularjs-gulp-browserify-boilerplate](https://github.com/jak
 
 ### Getting up and running
 
-1. Clone this repo from `https://github.com/ChristopherUrquidi/angularjs-bootstrap-gulp-browserify-boilerplate.git`
+1. Clone this repo from `https://github.com/madmod/angularjs-bootstrap-gulp-browserify-boilerplate.git`
 2. Run `npm install` from the root directory
 3. Run `gulp dev` (may require installing Gulp globally `npm install gulp -g`)
 4. Your browser will automatically be opened and directed to the browser-sync proxy address
@@ -29,68 +29,13 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 This boilerplate uses the latest versions of the following libraries:
 
-- [AngularJS](http://angularjs.org/) 
+- ~~[AngularJS](http://angularjs.org/)~~
 - [Bootstrap] (http://getbootstrap.com)
 - [SASS](http://sass-lang.com/)
 - [Gulp](http://gulpjs.com/)
 - [Browserify](http://browserify.org/)
 
 Along with many Gulp libraries (these can be seen in either `package.json`, or at the top of each task in `/gulp/tasks/`).
-
----
-
-### AngularJS
-
-AngularJS is a MVW (Model-View-Whatever) Javascript Framework for creating single-page web applications. In this boilerplate, it is used for all the application routing as well as all of the frontend views and logic.
-
-The AngularJS files are all located within `/app/js`, structured in the following manner:
-
-```
-/controllers
-  index.js   (the main module on which all controllers will be mounted, loaded in main.js)
-  example.js
-/directives
-  index.js   (the main module on which all directives will be mounted, loaded in main.js)
-  example.js
-/filters
-  index.js (the main module on which all filters will be mounted, loaded in main.js)
-  example.js
-/services
-  index.js   (the main module on which all services will be mounted, loaded in main.js)
-  example.js
-constants.js  (any constant values that you want to make available to Angular)
-main.js       (the main file read by Browserify, also where the application is defined and bootstrapped)
-on_run.js     (any functions or logic that need to be executed on app.run)
-on_config.js  (all route definitions and any logic that need to be executed on app.config)
-templates.js  (this is created via Gulp by compiling your views, and will not be present beforehand)
-```
-
-##### Module organization
-
-Controllers, services, directives, etc. should all be placed within their respective folders, and will be automatically required and mounted via their respective `index.js` using `bulk-require`. All modules must export an object of the format:
-
-```javascript
-const ExampleModule = function() {};
-
-export default {
-  name: 'ExampleModule',
-  fn: ExampleModule
-};
-
-```
-
-##### Dependency injection
-
-Dependency injection is carried out with the `ng-annotate` library. In order to take advantage of this, a simple directive prologue of the format:
-
-```js
-function MyService($http) {
-  'ngInject';
-  ...
-}
-```
-
-needs to be added at the very beginning of any Angular functions/modules. The Gulp tasks will then take care of adding any dependency injection, requiring you to only specify the dependencies within the function parameters and nothing more.
 
 ---
 
@@ -118,7 +63,7 @@ Gulp is used here to provide a very basic node/Express web server for viewing an
 
 A number of build processes are automatically run on all of our Javascript files, run in the following order:
 
-- **JSHint:** Gulp is currently configured to run a JSHint task before processing any Javascript files. This will show any errors in your code in the console, but will not prevent compilation or minification from occurring.
+- **ESLint:** Gulp is currently configured to run an ESLint task before processing any Javascript files. This will show any errors in your code in the console, but will not prevent compilation or minification from occurring.
 - **Browserify:** The main build process run on any Javascript files. This processes any of the `require('module')` statements, compiling the files as necessary.
 - **Babelify:** This uses [babelJS](https://babeljs.io/) to provide support for ES6+ features.
 - **Debowerify:** Parses `require()` statements in your code, mapping them to `bower_components` when necessary. This allows you to use and include bower components just as you would npm modules.
@@ -160,6 +105,14 @@ When running with `gulp prod`, a pre-compressed file is generated in addition to
 ##### Testing
 
 A Gulp tasks also exists for running the test framework (discussed in detail below). Running `gulp test` will run any and all tests inside the `/test` directory and show the results (and any errors) in the terminal.
+
+##### Deployment
+
+The project can be deployed to AWS S3 by running `gulp deploy`.
+
+##### Environments
+
+Multiple deployment environments can be used by specifying the `--env` flag with `gulp build` or `gulp deploy`. These environments can override any configuration in `config.js` and are defined in the `envOverrides.environments` key there.
 
 ---
 
