@@ -139,11 +139,6 @@ export default {
   init () {
     this.applyEnvOverrides();
 
-    this.views.watch = [
-      this.views.index,
-      this.views.src
-    ];
-
     return this;
   },
 
