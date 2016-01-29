@@ -11,10 +11,27 @@ import templateCache from 'gulp-angular-templatecache';
 // Views task
 gulp.task('views', function() {
   // Set template paths for nunjucks.
-  nunjucksRender.nunjucks.configure(config.views.templatePaths, { watch: false });
+  nunjucksRender.nunjucks.configure(config.views.templatePaths, {
+    tags: {
+      blockStart: '<%',
+      blockEnd: '%>',
+      variableStart: '<$',
+      variableEnd: '$>',
+      commentStart: '<#',
+      commentEnd: '#>'
+    },
+    watch: false
+  });
 
   // Put our index.html in the dist folder
   const indexFile = gulp.src(config.views.index)
+    // Render index.html nunjucks template.
+    .pipe(data({
+      // Pass environment config to templates.
+      env: config.env,
+      config: config
+    }))
+    .pipe(nunjucksRender())
     .pipe(gulp.dest(config.buildDir));
 
   // Process any other view files from app/views
