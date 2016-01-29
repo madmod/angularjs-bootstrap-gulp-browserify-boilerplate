@@ -71,10 +71,11 @@ export default {
   },
 
   views: {
+    index: 'app/index.html',
     // Include the templates directory for HTML partials that wont be copied to the build output.
     templatePaths: ['app/templates', 'app/views'],
     src: 'app/views/**/*.html',
-    dest: 'build/'
+    dest: 'app/js'
   },
 
   gzip: {
