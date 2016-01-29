@@ -2,7 +2,7 @@ angularjs-bootstrap-gulp-browserify-boilerplate
 =====================================
 [![devDependency Status](https://david-dm.org/madmod/angularjs-bootstrap-gulp-browserify-boilerplate/dev-status.svg)](https://david-dm.org/madmod/angularjs-bootstrap-gulp-browserify-boilerplate#info=devDependencies)
 
-A boilerplate using ~~AngularJS,~~ Bootstrap SASS, Gulp, and Browserify that utilizes Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
+A boilerplate using AngularJS, Bootstrap SASS, Gulp, and Browserify that utilizes Gulp best practices from [this resource](https://github.com/greypants/gulp-starter).
 
 This is a fork of [angularjs-gulp-browserify-boilerplate](https://github.com/jakemmarsh/angularjs-gulp-browserify-boilerplate)
 
@@ -29,7 +29,7 @@ Now that `gulp dev` is running, the server is up as well and serving files from 
 
 This boilerplate uses the latest versions of the following libraries:
 
-- ~~[AngularJS](http://angularjs.org/)~~
+- [AngularJS](http://angularjs.org/)
 - [Bootstrap] (http://getbootstrap.com)
 - [SASS](http://sass-lang.com/)
 - [Gulp](http://gulpjs.com/)
